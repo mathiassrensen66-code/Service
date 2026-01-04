@@ -1,5 +1,3 @@
-import { Leaf } from "lucide-react";
-
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-16">
@@ -7,20 +5,14 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                <Leaf className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <span
-                className="text-xl font-bold"
-                style={{ fontFamily: "'Fraunces', serif" }}
-              >
-                Midtjysk Møbelrens
-              </span>
-            </div>
+            <span
+              className="text-xl font-bold block mb-4"
+              style={{ fontFamily: "'Fraunces', serif" }}
+            >
+              Midtjysk Møbelrens
+            </span>
             <p className="text-white/60 max-w-sm leading-relaxed mb-6">
-              Professionel tekstilpleje med fokus på kvalitet, miljø og kundetilfredshed. 
-              Vi giver dit hjem den kærlige behandling det fortjener.
+              Midtjysk Møbelrens er baseret i Jylland og tilbyder professionel rens af sofaer, lædermøbler og tekstiler i Midtjylland og større byer i Sydjylland. Vi hjælper både private og erhverv med at give møblerne nyt liv
             </p>
             <div className="flex gap-4">
               <a
@@ -50,28 +42,28 @@ export default function Footer() {
             </div>
           </div>
           
-          {/* Quick Links */}
+          {/* Menu */}
           <div>
-            <h4 className="font-semibold mb-4 text-secondary">Services</h4>
+            <h4 className="font-semibold mb-4">Menu</h4>
             <ul className="space-y-3 text-white/60">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Sofarengøring
+                <a href="#pricing" className="hover:text-white transition-colors">
+                  Priser
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Tæpperengøring
+                <a href="#before-visit" className="hover:text-white transition-colors">
+                  Før dit besøg
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Tekstilimprægnering
+                <a href="#contact" className="hover:text-white transition-colors">
+                  Kontakt os
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Madrensning
+                <a href="#business" className="hover:text-white transition-colors">
+                  Erhverv
                 </a>
               </li>
             </ul>
@@ -79,14 +71,13 @@ export default function Footer() {
           
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4 text-secondary">Kontakt</h4>
+            <h4 className="font-semibold mb-4">Kontakt</h4>
             <ul className="space-y-3 text-white/60">
-              <li>+45 12 34 56 78</li>
-              <li>info@midtjyskmøbelrens.dk</li>
-              <li>Hele Sjælland</li>
-              <li className="pt-2">
-                <span className="text-xs text-white/40">CVR: 12345678</span>
-              </li>
+              <li>Midtjysk Møbelrens Aps</li>
+              <li>Juelsgade 21, 7130 Juelsminde</li>
+              <li>CVR 45377024</li>
+              <li>Tlf. 30 13 50 30</li>
+              <li>Mandag til fredag fra 8-16</li>
             </ul>
           </div>
         </div>
@@ -94,14 +85,14 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/40 text-sm">
-            © {new Date().getFullYear()} Midtjysk Møbelrens. Alle rettigheder forbeholdes.
+            © {new Date().getFullYear()} Made with ♡ by UngEvent.
           </p>
           <div className="flex gap-6 text-white/40 text-sm">
             <a href="#" className="hover:text-white transition-colors">
-              Privatlivspolitik
+              Handelsbetingelser
             </a>
             <a href="#" className="hover:text-white transition-colors">
-              Handelsbetingelser
+              Sikkerhedsblade
             </a>
           </div>
         </div>

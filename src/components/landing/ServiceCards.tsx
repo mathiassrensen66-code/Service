@@ -1,144 +1,251 @@
 import { motion } from "framer-motion";
-import { Sofa, Sparkles, Shield, Check } from "lucide-react";
+import { Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const sofaService = {
+  title: "Sofa Rens",
+  price: "795,-",
+  subtitle: "uanset størrelsen på din sofa",
+  description: "Vi renser alle siddeflader og puder som sofaen er produceret med.",
+  features: [
+    "Tørretid ca 6-8 timer",
+    "Svanemærket produkter",
+  ],
+  note: "*Bemærk at sofaen skal være et sammenhængemøbel. Løse moduler har en tillægspris",
+  note2: "*Bemærk, at rens af designmøbler ikke er omfattet af vores standardpriser",
+  image: "/Couch.1.png",
+};
 
 const services = [
   {
-    icon: Sofa,
-    title: "Sofarens",
+    title: "Stole Rens",
+    price: "FRA 185,-",
+    subtitle: "SPISEBORDSTOL FRA 185,- /stk.",
+    subtitle2: "Lænestol fra 685,-",
+    description: "Vi kan rense alle typer tekstil stole.",
     features: [
-      "Fjerner pletter & lugt",
-      "Professionel dybderens",
-      "Effektiv lugtfjerning (mad, røg & kæledyr)",
+      "Tørretid ca 2-4 timer",
+      "Svanemærket produkter",
     ],
-    image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=600&q=80",
+    image: "/Chair2.png",
+    imagePosition: "right", // Billede til højre
+    circleColor: "yellow", // Gul cirkulær baggrund
   },
   {
-    icon: Shield,
-    title: "Imprægnering",
-    features: [
-      "Afviser snavs & væske",
-      "Bevarer farver & tekstiler",
-    ],
-    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80",
-  },
-  {
-    icon: Sparkles,
     title: "Tæpperens",
+    price: "fra 495,-",
+    description: "Vi er de eneste i Danmark, der tilbyder SteamClean tæpperens hjemme hos dig.",
     features: [
-      "Fjerner snavs & lugt",
-      "Skånsom rens af tæpper",
+      "Ingen besvær – vi kører ud",
+      "Svanemærket produkter",
+      "Hurtig tørretid: 2–4 timer",
     ],
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+    image: "/Carpet.jpg",
+    imagePosition: "left", // Billede til venstre
+    circleColor: "yellow", // Gul cirkulær baggrund
+  },
+  {
+    title: "Rens af læder",
+    price: "FRA 995,-",
+    description: "Vi renser alle typer af lædermøbler.",
+    description2: "Vi afrenser dit møbel, efterfølgende giver vi den optimale pleje.",
+    note: "Prisen på dit møbel afhænger af størrelsen, type på læderet mm.",
+    image: "/Leather.png",
+    imagePosition: "right", // Billede til højre
+    circleColor: "gray", // Grå cirkulær baggrund
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
 export default function ServiceCards() {
   return (
-    <section className="py-24 lg:py-32 relative">
-      <div className="absolute inset-0 noise-texture bg-background" />
-      
-      <div className="container mx-auto px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center max-w-2xl mx-auto mb-16 lg:mb-20"
-        >
-          <span className="inline-block text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-4">
-            Vores Services
-          </span>
-          <h2
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6"
-            style={{ fontFamily: "'Fraunces', serif" }}
+    <section className="py-24 lg:py-32 relative bg-blue-50">
+      {/* Sofa Rens - Special Layout */}
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="relative mb-24 lg:mb-32"
+      >
+        <div className="flex flex-col lg:flex-row items-center relative">
+          {/* Sofa Image - Overlapper containeren */}
+          <div className="w-full lg:w-1/2 flex justify-start lg:justify-end relative z-20 lg:-mr-16 pl-6 lg:pl-8 lg:pl-16">
+            <div className="w-full max-w-2xl lg:max-w-3xl">
+              <img
+                src={sofaService.image}
+                alt={sofaService.title}
+                className="w-full h-auto object-contain"
+                style={{ borderRadius: "24px" }}
+              />
+            </div>
+          </div>
+
+          {/* Dark Green Container - Fylder helt ud til venstre */}
+          <div
+            className="w-full lg:w-1/2 relative z-10 rounded-2xl lg:rounded-l-none lg:rounded-r-3xl"
+            style={{ backgroundColor: "#2563eb" }}
           >
-            Professionel pleje
-            <br />
-            til dit hjem
-          </h2>
-          <p className="text-lg text-foreground/70 leading-relaxed">
-            Vi tilbyder omfattende tekstilpleje med fokus på kvalitet og bæredygtighed.
-          </p>
-        </motion.div>
-
-        {/* Service Cards */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-6 lg:gap-8"
-        >
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              variants={cardVariants}
-              whileHover={{ y: -8 }}
-              className={`group relative bg-card rounded-3xl overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.12)] transition-all duration-500 ${
-                index === 1 ? "md:mt-8" : ""
-              }`}
-            >
-              {/* Card Image */}
-              <div className="relative h-56 overflow-hidden">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
-              </div>
-
-              {/* Card Content */}
-              <div className="p-8 pt-4">
-                <div className="w-14 h-14 bg-secondary/20 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-secondary/30 transition-colors duration-300">
-                  <service.icon className="w-7 h-7 text-secondary" />
-                </div>
-                
-                <h3
-                  className="text-2xl font-bold text-foreground mb-4"
+              <div className="p-8 lg:p-12 lg:pl-16 lg:pr-24">
+                <h2
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white"
                   style={{ fontFamily: "'Fraunces', serif" }}
                 >
-                  {service.title}
-                </h3>
-                
-                <ul className="space-y-2 mb-6">
+                  {sofaService.title}
+                </h2>
+
+                <div className="mb-4">
+                  <span
+                    className="text-4xl md:text-5xl lg:text-6xl font-bold text-white"
+                    style={{ fontFamily: "'Fraunces', serif" }}
+                  >
+                    {sofaService.price}
+                  </span>
+                </div>
+
+                {sofaService.subtitle && (
+                  <p className="text-lg text-white/90 mb-6">{sofaService.subtitle}</p>
+                )}
+
+                {sofaService.description && (
+                  <p className="text-base text-white/90 mb-6 leading-relaxed">
+                    {sofaService.description}
+                  </p>
+                )}
+
+                {sofaService.features && (
+                  <ul className="space-y-3 mb-6">
+                    {sofaService.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-white/90">
+                        <Check className="w-5 h-5 text-[#00B67A] flex-shrink-0 mt-0.5" />
+                        <span className="text-base leading-relaxed">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {sofaService.note && (
+                  <p className="text-sm text-white/80 italic mb-2">{sofaService.note}</p>
+                )}
+                {sofaService.note2 && (
+                  <p className="text-sm text-white/80 italic mb-6">{sofaService.note2}</p>
+                )}
+
+                <Button
+                  className="bg-[#10b981] hover:bg-[#059669] text-white px-8 py-6 text-base font-semibold rounded-full transition-all duration-300 hover:scale-[1.02] w-fit"
+                  onClick={() => {
+                    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  Book tid
+                </Button>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
+        {/* Other Services */}
+        {services.map((service, index) => (
+          <motion.div
+            key={service.title}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: index * 0.2 }}
+            className={`flex flex-col ${
+              service.imagePosition === "right" ? "lg:flex-row" : "lg:flex-row-reverse"
+            } items-center gap-12 lg:gap-16 mb-24 lg:mb-32 last:mb-0`}
+          >
+            {/* Image Section */}
+            <div className="w-full lg:w-1/2 flex justify-center">
+              <div
+                className={`relative w-full max-w-md aspect-square rounded-full flex items-center justify-center ${
+                  service.circleColor === "yellow"
+                    ? "bg-[#10b981]"
+                    : "bg-gray-200"
+                }`}
+              >
+                <div className="w-[80%] h-[80%] relative">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className={`w-full h-full object-contain ${
+                      service.image.includes("Carpet") ? "rounded-full" : "rounded-3xl"
+                    }`}
+                    style={service.image.includes("Carpet") ? { borderRadius: "50%" } : { borderRadius: "24px" }}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Content Section */}
+            <div className="w-full lg:w-1/2 flex flex-col justify-center">
+              <h2
+                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+                style={{
+                  fontFamily: "'Fraunces', serif",
+                  color: "#2563eb", // Blå
+                }}
+              >
+                {service.title}
+              </h2>
+
+              {service.subtitle && (
+                <p className="text-lg text-foreground/70 mb-2">{service.subtitle}</p>
+              )}
+              {service.subtitle2 && (
+                <p className="text-lg text-foreground/70 mb-4">{service.subtitle2}</p>
+              )}
+
+              <div className="mb-6">
+                <span
+                  className="text-3xl md:text-4xl font-bold"
+                  style={{
+                    fontFamily: "'Fraunces', serif",
+                    color: "#1a3a2a",
+                  }}
+                >
+                  {service.price}
+                </span>
+              </div>
+
+              {service.description && (
+                <p className="text-base text-foreground/70 mb-4 leading-relaxed">
+                  {service.description}
+                </p>
+              )}
+              {service.description2 && (
+                <p className="text-base text-foreground/70 mb-4 leading-relaxed">
+                  {service.description2}
+                </p>
+              )}
+
+              {service.features && (
+                <ul className="space-y-3 mb-6">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-foreground/80">
-                      <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm leading-relaxed">{feature}</span>
+                    <li key={idx} className="flex items-start gap-3 text-foreground/80">
+                      <Check className="w-5 h-5 text-[#2563eb] flex-shrink-0 mt-0.5" />
+                      <span className="text-base leading-relaxed">{feature}</span>
                     </li>
                   ))}
                 </ul>
-                
-                <button className="mt-6 text-primary font-semibold flex items-center gap-2 group/btn hover:gap-3 transition-all duration-300">
-                  Læs mere
-                  <span className="transition-transform duration-300 group-hover/btn:translate-x-1">→</span>
-                </button>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+              )}
+
+              {service.note && (
+                <p className="text-sm text-foreground/60 italic mb-6">{service.note}</p>
+              )}
+
+              <Button
+                className="bg-[#10b981] hover:bg-[#059669] text-white px-8 py-6 text-base font-semibold rounded-full transition-all duration-300 hover:scale-[1.02] w-fit"
+                onClick={() => {
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                Book tid
+              </Button>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

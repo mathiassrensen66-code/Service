@@ -3,12 +3,12 @@ import { Quote, Star } from "lucide-react";
 
 export default function TestimonialBlock() {
   return (
-    <section className="py-24 lg:py-32 bg-primary relative overflow-hidden">
+    <section className="py-24 lg:py-32 bg-blue-50 relative overflow-hidden">
       {/* Decorative Elements */}
-      <div className="absolute top-20 left-20 text-white/10">
+      <div className="absolute top-20 left-20 text-[#2563eb]/10">
         <Quote className="w-48 h-48" strokeWidth={1} />
       </div>
-      <div className="absolute bottom-20 right-20 text-white/10 rotate-180">
+      <div className="absolute bottom-20 right-20 text-[#2563eb]/10 rotate-180">
         <Quote className="w-32 h-32" strokeWidth={1} />
       </div>
       
@@ -23,13 +23,13 @@ export default function TestimonialBlock() {
           {/* Star Rating */}
           <div className="flex justify-center gap-1 mb-8">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-6 h-6 fill-secondary text-secondary" />
+              <Star key={i} className="w-6 h-6 fill-[#10b981] text-[#10b981]" />
             ))}
           </div>
           
           {/* Quote */}
           <blockquote
-            className="text-2xl md:text-3xl lg:text-4xl font-medium text-white leading-relaxed mb-10"
+            className="text-2xl md:text-3xl lg:text-4xl font-medium text-foreground leading-relaxed mb-10"
             style={{ fontFamily: "'Fraunces', serif" }}
           >
             "Vi har brugt Midtjysk Møbelrens i flere år nu, og hver gang er resultatet imponerende. 
@@ -46,8 +46,8 @@ export default function TestimonialBlock() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <p className="text-lg font-semibold text-white">Maria Nielsen</p>
-            <p className="text-white/80">København</p>
+            <p className="text-lg font-semibold text-foreground">Maria Nielsen</p>
+            <p className="text-foreground/70">København</p>
           </div>
         </motion.div>
         
@@ -82,7 +82,7 @@ export default function TestimonialBlock() {
             >
               <div className="flex justify-center gap-0.5 mb-3">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
+                  <Star key={i} className="w-4 h-4 fill-foreground text-foreground" />
                 ))}
               </div>
               <p className="text-foreground/80 mb-4 italic">"{testimonial.quote}"</p>

@@ -29,8 +29,7 @@ export default function BeforeAfterSlider() {
   const handleEnd = () => setIsDragging(false);
 
   return (
-    <section className="py-24 lg:py-32 relative">
-      <div className="absolute inset-0 noise-texture bg-[#F9F7F4]" />
+    <section className="py-24 lg:py-32 relative bg-white">
       
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -41,17 +40,17 @@ export default function BeforeAfterSlider() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <span className="inline-block text-sm font-semibold tracking-[0.2em] uppercase text-[#A8B5A0] mb-4">
-            Se Forskellen
-          </span>
           <h2
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#2B2B2B] mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6"
             style={{ fontFamily: "'Fraunces', serif" }}
           >
-            Før og efter
+            Før og Efter
           </h2>
-          <p className="text-lg text-[#2B2B2B]/70 leading-relaxed">
-            Træk i slideren for at se den dramatiske forvandling vores rengøring kan skabe.
+          <p className="text-lg text-foreground/70 leading-relaxed">
+            Udførte opgaver
+          </p>
+          <p className="text-base text-foreground/70 leading-relaxed mt-2">
+            Vi levere et meget simpelt og ærligt produkt, som i alt sin enkelhed går ud på at forlænge levetiden på dine møbler
           </p>
         </motion.div>
 
@@ -65,7 +64,7 @@ export default function BeforeAfterSlider() {
         >
           <div
             ref={containerRef}
-            className="relative w-full aspect-[16/10] rounded-3xl overflow-hidden shadow-[0_32px_64px_rgba(0,0,0,0.12)] cursor-ew-resize select-none"
+            className="relative w-full aspect-[16/10] overflow-hidden border border-border cursor-ew-resize select-none"
             onMouseMove={handleMouseMove}
             onMouseUp={handleEnd}
             onMouseLeave={handleEnd}
@@ -81,7 +80,7 @@ export default function BeforeAfterSlider() {
                 draggable={false}
               />
               {/* After Label */}
-              <div className="absolute bottom-6 right-6 bg-[#A8B5A0] text-[#2B2B2B] px-4 py-2 rounded-full text-sm font-semibold">
+              <div className="absolute bottom-6 right-6 bg-white text-foreground px-4 py-2 text-sm font-semibold">
                 Efter
               </div>
             </div>
@@ -98,7 +97,7 @@ export default function BeforeAfterSlider() {
                 draggable={false}
               />
               {/* Before Label */}
-              <div className="absolute bottom-6 left-6 bg-[#2B2B2B]/80 text-white px-4 py-2 rounded-full text-sm font-semibold">
+              <div className="absolute bottom-6 left-6 bg-foreground text-background px-4 py-2 text-sm font-semibold">
                 Før
               </div>
             </div>
@@ -117,7 +116,7 @@ export default function BeforeAfterSlider() {
           </div>
 
           {/* Instructions */}
-          <p className="text-center text-[#2B2B2B]/50 mt-6 text-sm">
+          <p className="text-center text-foreground/50 mt-6 text-sm">
             ← Træk for at sammenligne →
           </p>
         </motion.div>

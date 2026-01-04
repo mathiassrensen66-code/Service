@@ -5,7 +5,9 @@ import ServiceCards from "@/components/landing/ServiceCards";
 import TrustSignals from "@/components/landing/TrustSignals";
 import BeforeAfterSlider from "@/components/landing/BeforeAfterSlider";
 import TestimonialBlock from "@/components/landing/TestimonialBlock";
-import PricingSection from "@/components/landing/PricingSection";
+import CampaignSection from "@/components/landing/CampaignSection";
+import DesignSpecialists from "@/components/landing/DesignSpecialists";
+import CTASection from "@/components/landing/CTASection";
 import ContactFooter from "@/components/landing/ContactFooter";
 import Footer from "@/components/landing/Footer";
 
@@ -17,20 +19,19 @@ function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F9F7F4] overflow-x-hidden">
+    <div className="min-h-screen bg-blue-50/30 overflow-x-hidden">
       <Navigation onCtaClick={scrollToContact} />
       <HeroSection onCtaClick={scrollToContact} />
       <div id="services">
         <ServiceCards />
       </div>
-      <div id="about">
-        <TrustSignals />
-      </div>
       <div id="results">
         <BeforeAfterSlider />
       </div>
       <TestimonialBlock />
-      <PricingSection />
+      <CampaignSection />
+      <DesignSpecialists />
+      <CTASection />
       <div ref={contactRef} id="contact">
         <ContactFooter />
       </div>

@@ -1,12 +1,66 @@
 import { motion } from "framer-motion";
-import { Check, MapPin, Clock, Tag } from "lucide-react";
+import { Check, Sofa, Square, Layers, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const pricingServices = [
+  {
+    icon: Sofa,
+    title: "Sofa Rens",
+    price: "795,-",
+    subtitle: "uanset størrelsen på din sofa",
+    description: "Vi renser alle siddeflader og puder som sofaen er produceret med.",
+    features: [
+      "Tørretid ca 6-8 timer",
+      "Svanemærket produkter",
+    ],
+    note: "*Bemærk at sofaen skal være et sammenhængemøbel. Løse moduler har en tillægspris",
+    note2: "*Bemærk, at rens af designmøbler ikke er omfattet af vores standardpriser",
+  },
+  {
+    icon: Square,
+    title: "Stole Rens",
+    price: "FRA 185,-",
+    subtitle: "SPISEBORDSTOL FRA 185,- /stk.",
+    subtitle2: "Lænestol fra 685,-",
+    description: "Vi kan rense alle typer tekstil stole.",
+    features: [
+      "Tørretid ca 2-4 timer",
+      "Svanemærket produkter",
+    ],
+  },
+  {
+    icon: Layers,
+    title: "Tæpperens",
+    price: "fra 495,-",
+    description: "Vi er de eneste i Danmark, der tilbyder SteamClean tæpperens hjemme hos dig.",
+    features: [
+      "Ingen besvær – vi kører ud",
+      "Svanemærket produkter",
+      "Hurtig tørretid: 2–4 timer",
+    ],
+  },
+  {
+    icon: Shield,
+    title: "Rens af læder",
+    price: "FRA 995,-",
+    description: "Vi renser alle typer af lædermøbler.",
+    description2: "Vi afrenser dit møbel, efterfølgende giver vi den optimale pleje.",
+    note: "Prisen på dit møbel afhænger af størrelsen, type på læderet mm.",
+  },
+  {
+    icon: Shield,
+    title: "Imprægnering",
+    price: "fra 295,-",
+    subtitle: "Imprægnering af møbler",
+    subtitle2: "Forlæng levetiden på dine møbler med effektiv imprægnering. Sofaer fra 295,- | Stole fra 85,-",
+    description: "Vi bruger en langtidsholdbar imprægnering, der beskytter i op til 2 år.",
+    note: "Prisen varierer efter møblets størrelse",
+  },
+];
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="py-24 lg:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 noise-texture bg-background" />
-      
+    <section id="pricing" className="py-24 lg:py-32 relative overflow-hidden bg-white">
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
@@ -16,150 +70,85 @@ export default function PricingSection() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-2xl mx-auto mb-16 lg:mb-20"
         >
-          <span className="inline-block text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-4">
-            Vores Priser
-          </span>
           <h2
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6"
             style={{ fontFamily: "'Fraunces', serif" }}
           >
-            Transparente priser
-            <br />
-            uden skjulte omkostninger
+            Priser
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
-          {/* Main Pricing Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="bg-primary rounded-3xl p-8 lg:p-10 text-white relative overflow-hidden"
-          >
-            {/* Offer Badge */}
-            <div className="absolute top-6 right-6 bg-secondary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold">
-              ÅBNINGSTILBUD
-            </div>
-            
-            <div className="mb-6">
-              <Tag className="w-12 h-12 mb-4 text-white/80" />
-              <h3
-                className="text-3xl font-bold mb-2"
-                style={{ fontFamily: "'Fraunces', serif" }}
-              >
-                Sofarens
-              </h3>
-              <p className="text-white/80 mb-6">
-                Uanset størrelse på sofaen (2-pers., 3-pers. eller hjørnesofa)
-              </p>
-            </div>
-
-            <div className="mb-8">
-              <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-6xl font-bold" style={{ fontFamily: "'Fraunces', serif" }}>
-                  500
-                </span>
-                <span className="text-2xl">kr</span>
-              </div>
-              <p className="text-white/70 text-sm mb-6">Tilbudspris</p>
-              <div className="pt-6 border-t border-white/20">
-                <p className="text-white/80 text-sm mb-2">Efter tilbudsperioden:</p>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-4xl font-bold">675 kr,-</span>
-                </div>
-                <p className="text-white/70 text-sm mt-1">uanset størrelse på sofaen</p>
-              </div>
-            </div>
-
-            <ul className="space-y-3 mb-8">
-              <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-                <span className="text-sm">Fjerner pletter & lugt</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-                <span className="text-sm">Professionel dybderens</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-                <span className="text-sm">Effektiv lugtfjerning</span>
-              </li>
-            </ul>
-
-            <Button
-              className="w-full bg-white text-primary hover:bg-white/90 py-6 text-base font-semibold rounded-full"
-              onClick={() => {
-                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-              }}
+        {/* Pricing Cards Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
+          {pricingServices.map((service, index) => (
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              className="bg-white border border-border rounded-lg p-8 hover:shadow-lg transition-shadow"
             >
-              Book din tid nu
-            </Button>
-          </motion.div>
-
-          {/* Additional Info Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-card rounded-3xl p-8 lg:p-10 border border-border"
-          >
-            <h3
-              className="text-2xl font-bold mb-6 text-foreground"
-              style={{ fontFamily: "'Fraunces', serif" }}
-            >
-              Praktisk Information
-            </h3>
-
-            <div className="space-y-6">
-              {/* Travel Info */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-secondary" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">Kørsel</h4>
-                  <ul className="space-y-2 text-sm text-foreground/70">
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-secondary flex-shrink-0" />
-                      <span>Gratis kørsel op til 25 km fra Aarhus</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-primary">•</span>
-                      <span>Kørsel over 25 km: fra 300 kroner</span>
-                    </li>
-                  </ul>
-                </div>
+              <div className="mb-6">
+                <service.icon className="w-10 h-10 text-foreground mb-4" />
+                <h3
+                  className="text-2xl font-bold text-foreground mb-2"
+                  style={{ fontFamily: "'Fraunces', serif" }}
+                >
+                  {service.title}
+                </h3>
+                {service.subtitle && (
+                  <p className="text-sm text-foreground/70 mb-1">{service.subtitle}</p>
+                )}
+                {service.subtitle2 && (
+                  <p className="text-sm text-foreground/70 mb-1">{service.subtitle2}</p>
+                )}
               </div>
 
-              {/* Time Info */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-6 h-6 text-primary" />
+              <div className="mb-6">
+                <div className="flex items-baseline gap-2 mb-2">
+                  <span className="text-4xl font-bold text-foreground" style={{ fontFamily: "'Fraunces', serif" }}>
+                    {service.price}
+                  </span>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">Tider</h4>
-                  <p className="text-sm text-foreground/70">
-                    Mulighed for aften og weekendtider
-                  </p>
-                </div>
+                {service.description && (
+                  <p className="text-sm text-foreground/70 mb-4">{service.description}</p>
+                )}
+                {service.description2 && (
+                  <p className="text-sm text-foreground/70 mb-4">{service.description2}</p>
+                )}
               </div>
 
-              {/* Other Services */}
-              <div className="pt-6 border-t border-border">
-                <h4 className="font-semibold text-foreground mb-4">Andre Services</h4>
-                <ul className="space-y-2 text-sm text-foreground/70">
-                  <li>• Tæpperens - Ring for pris</li>
-                  <li>• Imprægnering - Ring for pris</li>
+              {service.features && (
+                <ul className="space-y-2 mb-6">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-sm text-foreground/80">
+                      <Check className="w-4 h-4 text-foreground flex-shrink-0 mt-0.5" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
                 </ul>
-              </div>
-            </div>
-          </motion.div>
+              )}
+
+              {service.note && (
+                <p className="text-xs text-foreground/60 mb-2 italic">{service.note}</p>
+              )}
+              {service.note2 && (
+                <p className="text-xs text-foreground/60 mb-4 italic">{service.note2}</p>
+              )}
+
+              <Button
+                className="w-full bg-foreground hover:bg-foreground/90 text-background py-6 text-base font-semibold rounded-none transition-all duration-300"
+                onClick={() => {
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                Book tid
+              </Button>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
-

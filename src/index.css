@@ -6,36 +6,36 @@
 
   @layer base {
     :root {
-      /* Midtjysk Møbelrens - Blå, Grøn, Sort og Hvid Palette */
-      --background: 0 0% 100%; /* #FFFFFF ren hvid */
-      --foreground: 0 0% 0%; /* #000000 sort */
+      /* Mikkelsen Møbelrens - Blå og Grøn Palette */
+      --background: 240 100% 98%; /* Lys blå baggrund */
+      --foreground: 220 40% 20%; /* Mørk blå tekst */
 
-      --card: 0 0% 98%; /* #FAFAFA meget lys grå */
-      --card-foreground: 0 0% 0%;
+      --card: 0 0% 100%; /* Hvid */
+      --card-foreground: 220 40% 20%;
 
       --popover: 0 0% 100%;
-      --popover-foreground: 0 0% 0%;
+      --popover-foreground: 220 40% 20%;
 
-      --primary: 217 91% 60%; /* #3B82F6 professionel blå */
+      --primary: 217 91% 60%; /* Blå */
       --primary-foreground: 0 0% 100%;
 
-      --secondary: 142 71% 45%; /* #10B981 professionel grøn */
+      --secondary: 142 71% 45%; /* Grøn */
       --secondary-foreground: 0 0% 100%;
 
-      --muted: 0 0% 96%;
-      --muted-foreground: 0 0% 45%;
+      --muted: 240 20% 96%;
+      --muted-foreground: 220 20% 45%;
 
-      --accent: 142 71% 45%; /* #10B981 grøn accent */
+      --accent: 142 71% 45%; /* Grøn */
       --accent-foreground: 0 0% 100%;
 
       --destructive: 0 84.2% 60.2%;
       --destructive-foreground: 0 0% 100%;
 
-      --border: 0 0% 90%;
-      --input: 0 0% 90%;
+      --border: 240 20% 90%;
+      --input: 240 20% 90%;
       --ring: 217 91% 60%;
 
-      --radius: 0.5rem;
+      --radius: 0rem;
 
       --sidebar-background: 0 0% 100%;
       --sidebar-foreground: 0 0% 0%;
