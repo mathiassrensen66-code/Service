@@ -69,7 +69,7 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="/HeroVid.mp4" type="video/mp4" />
+          <source src="/Hero.mp4" type="video/mp4" />
           {/* Fallback image if video doesn't load */}
           <img
             src="/CleaningHero.jpg"
