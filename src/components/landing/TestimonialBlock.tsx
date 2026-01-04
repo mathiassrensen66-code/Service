@@ -3,12 +3,12 @@ import { Quote, Star } from "lucide-react";
 
 export default function TestimonialBlock() {
   return (
-    <section className="py-24 lg:py-32 bg-[#E8DFD0] relative overflow-hidden">
+    <section className="py-24 lg:py-32 bg-primary relative overflow-hidden">
       {/* Decorative Elements */}
-      <div className="absolute top-20 left-20 text-[#A8B5A0]/20">
+      <div className="absolute top-20 left-20 text-white/10">
         <Quote className="w-48 h-48" strokeWidth={1} />
       </div>
-      <div className="absolute bottom-20 right-20 text-[#A8B5A0]/20 rotate-180">
+      <div className="absolute bottom-20 right-20 text-white/10 rotate-180">
         <Quote className="w-32 h-32" strokeWidth={1} />
       </div>
       
@@ -23,16 +23,16 @@ export default function TestimonialBlock() {
           {/* Star Rating */}
           <div className="flex justify-center gap-1 mb-8">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-6 h-6 fill-[#A8B5A0] text-[#A8B5A0]" />
+              <Star key={i} className="w-6 h-6 fill-secondary text-secondary" />
             ))}
           </div>
           
           {/* Quote */}
           <blockquote
-            className="text-2xl md:text-3xl lg:text-4xl font-medium text-[#2B2B2B] leading-relaxed mb-10"
+            className="text-2xl md:text-3xl lg:text-4xl font-medium text-white leading-relaxed mb-10"
             style={{ fontFamily: "'Fraunces', serif" }}
           >
-            "Vi har brugt Danish Textile Care i flere år nu, og hver gang er resultatet imponerende. 
+            "Vi har brugt Midtjysk Møbelrens i flere år nu, og hver gang er resultatet imponerende. 
             Vores sofa ser ud som ny, og servicen er altid professionel og venlig. 
             Kan kun anbefales!"
           </blockquote>
@@ -46,8 +46,8 @@ export default function TestimonialBlock() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <p className="text-lg font-semibold text-[#2B2B2B]">Maria Nielsen</p>
-            <p className="text-[#2B2B2B]/60">København</p>
+            <p className="text-lg font-semibold text-white">Maria Nielsen</p>
+            <p className="text-white/80">København</p>
           </div>
         </motion.div>
         
@@ -78,16 +78,16 @@ export default function TestimonialBlock() {
           ].map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center"
+              className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg"
             >
               <div className="flex justify-center gap-0.5 mb-3">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#A8B5A0] text-[#A8B5A0]" />
+                  <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
                 ))}
               </div>
-              <p className="text-[#2B2B2B]/80 mb-4 italic">"{testimonial.quote}"</p>
-              <p className="text-sm font-semibold text-[#2B2B2B]">{testimonial.name}</p>
-              <p className="text-xs text-[#2B2B2B]/60">{testimonial.location}</p>
+              <p className="text-foreground/80 mb-4 italic">"{testimonial.quote}"</p>
+              <p className="text-sm font-semibold text-foreground">{testimonial.name}</p>
+              <p className="text-xs text-foreground/60">{testimonial.location}</p>
             </div>
           ))}
         </motion.div>

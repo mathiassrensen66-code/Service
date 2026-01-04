@@ -8,16 +8,7 @@ interface NavigationProps {
 }
 
 export default function Navigation({ onCtaClick }: NavigationProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const navLinks = [
     { label: "Services", href: "#services" },
@@ -31,24 +22,20 @@ export default function Navigation({ onCtaClick }: NavigationProps) {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/90 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.06)]"
-          : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)]"
     >
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-[#A8B5A0] rounded-xl flex items-center justify-center">
-              <Leaf className="w-5 h-5 text-[#2B2B2B]" />
+            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+              <Leaf className="w-5 h-5 text-primary-foreground" />
             </div>
             <span
-              className="text-lg font-bold text-[#2B2B2B] hidden sm:block"
+              className="text-lg font-bold text-foreground hidden sm:block"
               style={{ fontFamily: "'Fraunces', serif" }}
             >
-              Danish Textile Care
+              Midtjysk Møbelrens
             </span>
           </a>
 
@@ -58,7 +45,7 @@ export default function Navigation({ onCtaClick }: NavigationProps) {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-[#2B2B2B]/70 hover:text-[#2B2B2B] font-medium transition-colors"
+                className="text-foreground/70 hover:text-foreground font-medium transition-colors"
               >
                 {link.label}
               </a>
@@ -69,7 +56,7 @@ export default function Navigation({ onCtaClick }: NavigationProps) {
           <div className="hidden md:block">
             <Button
               onClick={onCtaClick}
-              className="bg-[#A8B5A0] hover:bg-[#96A58E] text-[#2B2B2B] px-6 py-5 font-semibold rounded-full transition-all duration-300 hover:scale-[1.02]"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-5 font-semibold rounded-full transition-all duration-300 hover:scale-[1.02]"
             >
               Book nu
             </Button>
@@ -78,7 +65,7 @@ export default function Navigation({ onCtaClick }: NavigationProps) {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden w-10 h-10 flex items-center justify-center text-[#2B2B2B]"
+            className="md:hidden w-10 h-10 flex items-center justify-center text-foreground"
           >
             {isMobileMenuOpen ? (
               <X className="w-6 h-6" />
@@ -95,7 +82,7 @@ export default function Navigation({ onCtaClick }: NavigationProps) {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-white border-t border-[#E8DFD0]"
+          className="md:hidden bg-white border-t border-border"
         >
           <div className="container mx-auto px-6 py-6 space-y-4">
             {navLinks.map((link) => (
@@ -103,7 +90,7 @@ export default function Navigation({ onCtaClick }: NavigationProps) {
                 key={link.label}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-[#2B2B2B] font-medium py-2"
+                className="block text-foreground font-medium py-2"
               >
                 {link.label}
               </a>
@@ -113,7 +100,7 @@ export default function Navigation({ onCtaClick }: NavigationProps) {
                 setIsMobileMenuOpen(false);
                 onCtaClick();
               }}
-              className="w-full bg-[#A8B5A0] hover:bg-[#96A58E] text-[#2B2B2B] py-5 font-semibold rounded-full"
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-5 font-semibold rounded-full"
             >
               Book nu
             </Button>

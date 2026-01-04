@@ -63,10 +63,10 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 
 export default function TrustSignals() {
   return (
-    <section className="py-20 lg:py-24 bg-[#2B2B2B] relative overflow-hidden">
+    <section className="py-20 lg:py-24 bg-[#1a3a2a] relative overflow-hidden">
       {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-[#A8B5A0]/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#A8B5A0]/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+      <div className="absolute top-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
       
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <motion.div
@@ -85,8 +85,8 @@ export default function TrustSignals() {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               className="text-center"
             >
-              <div className="w-16 h-16 bg-[#A8B5A0]/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <stat.icon className="w-8 h-8 text-[#A8B5A0]" />
+              <div className="w-16 h-16 bg-secondary/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <stat.icon className="w-8 h-8 text-secondary" />
               </div>
               
               <p
@@ -96,7 +96,7 @@ export default function TrustSignals() {
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </p>
               
-              <p className="text-xs md:text-sm font-semibold tracking-[0.15em] text-[#A8B5A0]">
+              <p className="text-xs md:text-sm font-semibold tracking-[0.15em] text-secondary/90">
                 {stat.label}
               </p>
             </motion.div>

@@ -82,7 +82,7 @@ export default function ContactFooter() {
               </a>
               
               <a
-                href="mailto:info@danishtextilecare.dk"
+                href="mailto:info@midtjyskmøbelrens.dk"
                 className="flex items-center gap-4 text-[#2B2B2B] hover:text-[#A8B5A0] transition-colors group"
               >
                 <div className="w-12 h-12 bg-[#A8B5A0]/20 rounded-xl flex items-center justify-center group-hover:bg-[#A8B5A0]/30 transition-colors">
@@ -90,7 +90,7 @@ export default function ContactFooter() {
                 </div>
                 <div>
                   <p className="text-sm text-[#2B2B2B]/60">Send en email</p>
-                  <p className="font-semibold">info@danishtextilecare.dk</p>
+                  <p className="font-semibold">info@midtjyskmøbelrens.dk</p>
                 </div>
               </a>
               
@@ -206,9 +206,9 @@ export default function ContactFooter() {
                   disabled={isSubmitting || isSubmitted}
                   className={`w-full h-14 rounded-xl text-base font-semibold transition-all duration-300 ${
                     isSubmitted
-                      ? "bg-green-500 hover:bg-green-500"
-                      : "bg-[#A8B5A0] hover:bg-[#96A58E]"
-                  } text-[#2B2B2B] shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-[1.02]`}
+                      ? "bg-secondary hover:bg-secondary"
+                      : "bg-primary hover:bg-primary/90"
+                  } text-primary-foreground shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-[1.02]`}
                 >
                   {isSubmitting ? (
                     <span className="flex items-center gap-2">

@@ -6,45 +6,45 @@
 
   @layer base {
     :root {
-      /* Danish Textile Care - Scandinavian Minimalism Palette */
-      --background: 36 33% 97%; /* #F9F7F4 warm off-white */
-      --foreground: 0 0% 17%; /* #2B2B2B deep charcoal */
+      /* Midtjysk Møbelrens - Blå, Grøn, Sort og Hvid Palette */
+      --background: 0 0% 100%; /* #FFFFFF ren hvid */
+      --foreground: 0 0% 0%; /* #000000 sort */
 
-      --card: 34 24% 91%; /* #E8DFD0 warm beige */
-      --card-foreground: 0 0% 17%;
+      --card: 0 0% 98%; /* #FAFAFA meget lys grå */
+      --card-foreground: 0 0% 0%;
 
-      --popover: 36 33% 97%;
-      --popover-foreground: 0 0% 17%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 0 0% 0%;
 
-      --primary: 97 11% 67%; /* #A8B5A0 soft sage green */
-      --primary-foreground: 0 0% 17%;
+      --primary: 217 91% 60%; /* #3B82F6 professionel blå */
+      --primary-foreground: 0 0% 100%;
 
-      --secondary: 34 24% 91%; /* #E8DFD0 warm beige */
-      --secondary-foreground: 0 0% 17%;
+      --secondary: 142 71% 45%; /* #10B981 professionel grøn */
+      --secondary-foreground: 0 0% 100%;
 
-      --muted: 34 24% 91%;
-      --muted-foreground: 0 0% 40%;
+      --muted: 0 0% 96%;
+      --muted-foreground: 0 0% 45%;
 
-      --accent: 97 11% 67%; /* #A8B5A0 soft sage green */
-      --accent-foreground: 0 0% 17%;
+      --accent: 142 71% 45%; /* #10B981 grøn accent */
+      --accent-foreground: 0 0% 100%;
 
       --destructive: 0 84.2% 60.2%;
-      --destructive-foreground: 210 40% 98%;
+      --destructive-foreground: 0 0% 100%;
 
-      --border: 34 20% 85%;
-      --input: 34 20% 85%;
-      --ring: 97 11% 67%;
+      --border: 0 0% 90%;
+      --input: 0 0% 90%;
+      --ring: 217 91% 60%;
 
       --radius: 0.5rem;
 
-      --sidebar-background: 36 33% 97%;
-      --sidebar-foreground: 0 0% 17%;
-      --sidebar-primary: 97 11% 67%;
-      --sidebar-primary-foreground: 0 0% 17%;
-      --sidebar-accent: 34 24% 91%;
-      --sidebar-accent-foreground: 0 0% 17%;
-      --sidebar-border: 34 20% 85%;
-      --sidebar-ring: 97 11% 67%;
+      --sidebar-background: 0 0% 100%;
+      --sidebar-foreground: 0 0% 0%;
+      --sidebar-primary: 217 91% 60%;
+      --sidebar-primary-foreground: 0 0% 100%;
+      --sidebar-accent: 142 71% 45%;
+      --sidebar-accent-foreground: 0 0% 100%;
+      --sidebar-border: 0 0% 90%;
+      --sidebar-ring: 217 91% 60%;
     }
 
     .dark {

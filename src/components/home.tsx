@@ -5,6 +5,7 @@ import ServiceCards from "@/components/landing/ServiceCards";
 import TrustSignals from "@/components/landing/TrustSignals";
 import BeforeAfterSlider from "@/components/landing/BeforeAfterSlider";
 import TestimonialBlock from "@/components/landing/TestimonialBlock";
+import PricingSection from "@/components/landing/PricingSection";
 import ContactFooter from "@/components/landing/ContactFooter";
 import Footer from "@/components/landing/Footer";
 
@@ -29,6 +30,7 @@ function Home() {
         <BeforeAfterSlider />
       </div>
       <TestimonialBlock />
+      <PricingSection />
       <div ref={contactRef} id="contact">
         <ContactFooter />
       </div>
